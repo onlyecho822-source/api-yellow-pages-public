@@ -1,0 +1,44 @@
+{
+  "schema": "echo.a2x.receipt.v1",
+  "job_id": "A2X-YPG-20260918-002",
+  "receipt_id": "RCPT-A2X-YPG-20260918-002",
+  "observed_at": "2026-09-18T11:09:25Z",
+  "manifest_url": "https://raw.githubusercontent.com/onlyecho822-source/api-yellow-pages-public/a2x-live-loop-20260918/a2x/live/A2X-YPG-20260918-002.manifest.json",
+  "executor": {
+    "provider": "TinyFish",
+    "run_id": "14b8217b-4b05-43cd-9693-2aa5e757c9f4",
+    "step_count": 78,
+    "unit_cost_usd": "0.016",
+    "expected_cost_usd": "1.248",
+    "observed_wallet_before_usd": "4.168",
+    "observed_wallet_after_usd": "2.920",
+    "observed_cost_usd": "1.248"
+  },
+  "execution": {
+    "provider": "OptionsAhoy Equity Planner",
+    "skill_id": "nso_calculate",
+    "transport_used": "browser_ui_live_api",
+    "http_status": 200,
+    "latency": "80 ms",
+    "result_subset": {
+      "exercise.total": 89455.46,
+      "hold.netAtYearN": 120084.55607140882,
+      "sellNowInvest.netAtYearN": 143299.96514953705,
+      "holdMinusCashless": -23215.40907812823
+    }
+  },
+  "reconciliation": {
+    "financial_state": "COMMITTED",
+    "semantic_state": "MATCH",
+    "remedy_state": "NONE",
+    "cost_match": true,
+    "delivery_match": true,
+    "status": "RECONCILED"
+  },
+  "provenance": {
+    "registry": "Y Pages",
+    "branch": "a2x-live-loop-20260918",
+    "authority": "operator-authorized",
+    "external_cash_or_crypto": 0
+  }
+}
