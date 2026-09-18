@@ -1,0 +1,58 @@
+{
+  "schema": "echo.a2x.job.v1",
+  "job_id": "A2X-YPG-20260918-001",
+  "created_at": "2026-09-18T10:51:00Z",
+  "issuer": {
+    "name": "Echo",
+    "role": "principal"
+  },
+  "registry": {
+    "name": "Y Pages",
+    "repository": "onlyecho822-source/api-yellow-pages-public",
+    "branch": "a2x-live-loop-20260918"
+  },
+  "executor": {
+    "class": "external_agent",
+    "preferred": "TinyFish"
+  },
+  "action": {
+    "type": "http_capability_call",
+    "provider": "OptionsAhoy Equity Planner",
+    "endpoint": "https://optionsahoy.com/api/v1/nso",
+    "method": "POST",
+    "content_type": "application/json",
+    "payload": {
+      "shares": 5000,
+      "strike": 10,
+      "currentPrice": 50,
+      "expectedSalePrice": 80,
+      "expectedMarketReturn": 0.07,
+      "holdYears": 5,
+      "federalMarginalRate": 0.24,
+      "stateMarginalRate": 0.059,
+      "longTermCapGainsRate": 0.15,
+      "costBasis": 50,
+      "cashOrProceeds": "cash"
+    }
+  },
+  "expected_output": {
+    "http_status": 200,
+    "required_fields": [
+      "exercise.total",
+      "hold.netAtYearN",
+      "sellNowInvest.netAtYearN",
+      "holdMinusCashless"
+    ]
+  },
+  "evidence_policy": {
+    "record_run_id": true,
+    "record_step_count": true,
+    "record_cost_delta": true,
+    "record_result_subset": true
+  },
+  "authority": {
+    "operator_authorized": true,
+    "financial_asset": "TinyFish restricted credit",
+    "external_cash_or_crypto": 0
+  }
+}
